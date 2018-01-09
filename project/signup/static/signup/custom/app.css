@@ -14,6 +14,14 @@ a.navbar-brand {
     font-weight: bold;
 }
 
+body {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
 .content {
     min-height: 450px;
 }
@@ -28,7 +36,7 @@ a.navbar-brand {
 
 .footer {
     margin-top: 20px;
-    height: 150px;
+    height: 200px;
     background-color:#20B2AA;
     color: white;
 }

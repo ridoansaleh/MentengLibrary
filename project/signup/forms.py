@@ -3,8 +3,8 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 
 class SignUpForm(UserCreationForm):
-    Male = 'ML'
-    Female = 'FM'
+    Male = 'Male'
+    Female = 'Female'
     GenderChoices = (
         (Male, 'Male'),
         (Female, 'Female'),
@@ -14,4 +14,4 @@ class SignUpForm(UserCreationForm):
 
     class Meta:
         model = User
-        fields = ['username', 'gender', 'address', 'password1', 'password2']
+        fields = ['first_name', 'last_name', 'gender', 'address', 'username', 'password1', 'password2']

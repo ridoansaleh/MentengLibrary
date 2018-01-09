@@ -1,11 +1,18 @@
 from django.shortcuts import render
 from django.contrib.auth import login, authenticate
 from django.shortcuts import render, redirect
-from .models import Visitor
+from .models import Visitor, Book
 from .forms import SignUpForm
 
 def home(request):
-    return render(request, 'signup/base.html', {})
+    data = Book.objects.all()
+    context = {'data': data}
+    return render(request, 'signup/base.html', context)
+
+def detail(request, id):
+    book = Book.objects.get(id=id)
+    context = {'book': book}
+    return render(request, 'signup/detail.html', context)
 
 def signup(request):
     if request.method == 'POST':

@@ -13,10 +13,22 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.CreateModel(
+            name='Book',
+            fields=[
+                ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
+                ('title', models.CharField(max_length=100)),
+                ('book_file', models.FileField(upload_to=b'', blank=True)),
+                ('author', models.CharField(max_length=50)),
+                ('publisher', models.CharField(max_length=80, blank=True)),
+                ('publish_date', models.DateField(blank=True)),
+                ('uploader', models.ForeignKey(to=settings.AUTH_USER_MODEL)),
+            ],
+        ),
+        migrations.CreateModel(
             name='Visitor',
             fields=[
                 ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
-                ('gender', models.CharField(max_length=8)),
+                ('gender', models.CharField(default=b'Male', max_length=2, choices=[(b'Male', b'Male'), (b'Female', b'Female')])),
                 ('address', models.CharField(max_length=120)),
                 ('user', models.OneToOneField(to=settings.AUTH_USER_MODEL)),
             ],

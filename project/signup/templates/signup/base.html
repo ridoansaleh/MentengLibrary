@@ -1,3 +1,4 @@
+{% load staticfiles %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -5,16 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Menteng Library - Home</title>
-    {% load staticfiles %}
     <link rel="stylesheet" type="text/css" href="{% static 'signup/bootstrap-3.3.7/css/bootstrap.min.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'signup/custom/app.css' %}">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Joti+One">
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
   </head>
   <body>
     <nav class="navbar navbar-default">
@@ -56,11 +50,22 @@
     <div class="container content">
     {% block content %}
     <div class="row">
-        <div class="col-md-12">
-            <div class="well">Welcome to Menteng Library</div>
-        </div>
+            {% for d in data %}
+                <div class="col-md-3">
+                    <div class="thumbnail">
+                        <img src={{ d.book_file.url }} alt="Book">
+                        <div class="caption">
+                            <h3><a href="detail/{{d.id}}">{{ d.title }}</a></h3>
+                            <p>By: {{ d.author }}</p>
+                            <p>
+                            <a href="#" class="btn btn-sm btn-warning" role="button">Buy</a> 
+                            <a href="#" class="btn btn-sm btn-default" role="button">Read</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
     </div>
-
     {% endblock %}
     </div>
     <div class="container-fluid footer">
@@ -70,11 +75,8 @@
             </div>
         </div>
     </div>
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="{% static 'signup/jquery/jquery.min.js' %}"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="{% static 'signup/bootstrap-3.3.7/js/bootstrap.min.js' %}"></script>
-    <!-- Load a custom JavaScript file -->
     <script src="{% static 'signup/custom/app.js' %}"></script>
   </body>
 </html>
