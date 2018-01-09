@@ -1,0 +1,34 @@
+.navbar {
+    border-radius: 0;
+    background-color: white;
+    border-bottom: 2.5px solid #20B2AA;
+}
+
+a.navbar-brand {
+    font-family: 'Joti One', cursive;
+}
+
+.navbar-nav>.active>a {
+    background-color: white !important;
+    color: #20B2AA !important;
+    font-weight: bold;
+}
+
+.content {
+    min-height: 450px;
+}
+
+.form-control {
+    border-radius: 0;
+}
+
+.login{
+    margin-top: 100px;
+}
+
+.footer {
+    margin-top: 20px;
+    height: 150px;
+    background-color:#20B2AA;
+    color: white;
+}
