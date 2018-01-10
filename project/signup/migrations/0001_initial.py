@@ -18,6 +18,7 @@ class Migration(migrations.Migration):
                 ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
                 ('title', models.CharField(max_length=100)),
                 ('book_file', models.FileField(upload_to=b'', blank=True)),
+                ('thumbnail', models.FileField(upload_to=b'')),
                 ('author', models.CharField(max_length=50)),
                 ('publisher', models.CharField(max_length=80, blank=True)),
                 ('publish_date', models.DateField(blank=True)),

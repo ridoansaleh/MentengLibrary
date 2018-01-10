@@ -26,6 +26,7 @@ def update_user_visitor(sender, instance, created, **kwargs):
 class Book(models.Model):
     title = models.CharField(max_length=100, blank=False)
     book_file = models.FileField(blank=True)
+    thumbnail = models.FileField(blank=False)
     author = models.CharField(max_length=50, blank=False)
     publisher = models.CharField(max_length=80, blank=True)
     publish_date = models.DateField(blank=True)

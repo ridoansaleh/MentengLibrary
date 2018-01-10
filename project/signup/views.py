@@ -33,3 +33,12 @@ def signup(request):
 
 def profile(request):
     return render(request, 'signup/profile.html', {})
+
+def catalog(request):
+    return render(request, 'signup/catalog.html', {})
+
+def news(request):
+    return render(request, 'signup/news.html', {})
+
+def aboutus(request):
+    return render(request, 'signup/about_us.html', {})
