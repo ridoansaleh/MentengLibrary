@@ -9,7 +9,4 @@ urlpatterns = [
     url(r'^logout', auth_views.logout, {'next_page': '/'}, name='logout'),
     url(r'^profile', views.profile, name='profile'),
     url(r'^detail/(?P<id>\d+)$', views.detail, name='detail'),
-    url(r'^catalog', views.catalog, name='catalog'),
-    url(r'^news', views.news, name='news'),
-    url(r'^aboutus', views.aboutus, name='aboutus'),
 ]

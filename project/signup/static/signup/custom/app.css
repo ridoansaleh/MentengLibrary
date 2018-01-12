@@ -4,8 +4,22 @@
     border-bottom: 2.5px solid #20B2AA;
 }
 
-a.navbar-brand {
+a.navbar-brand, .news h2, .aboutus h2.text-center {
     font-family: 'Joti One', cursive;
+}
+
+.text-about {
+    color: white;
+    font-family: 'Dancing Script', cursive;
+    font-family: 'Macondo', cursive;
+    font-family: 'Work Sans', sans-serif;
+    font-size: 22px;
+}
+
+@media only screen and (max-width: 500px) {
+    .text-about {
+        font-size: 14px;
+    }
 }
 
 .navbar-nav>.active>a {
@@ -20,10 +34,6 @@ body {
     bottom: 0;
     left: 0;
     right: 0;
-}
-
-.content {
-    min-height: 450px;
 }
 
 .form-control, select.form-control {
@@ -43,15 +53,7 @@ body {
 }
 
 .footer {
-    margin-top: 20px;
-    height: 200px;
-    background-color:#2C3E50;
-    color: white;
-}
-
-.slick-prev, .slick-prev:hover, .slick-next, .slick-next:hover {
-    background-color: #20B2AA;
-    border-radius: 50%;
+    height: 100px;
 }
 
 .book-box .thumbnail {
@@ -70,15 +72,44 @@ body {
     background-color: white;
 }
 
+.input-group .form-control {
+    border: 0;
+}
+
 .book-session {
     position: absolute;
     top: 50px;
     left: 0px;
     width: 100%;
-    height: 160px;
+    height: 430px;
     background-color:#20B2AA;
+    z-index: -5;
 }
 
-.input-group .form-control {
+.news {
+    margin-top: 80px;
+    /* height: 600px; */
+    /* background-color: antiquewhite; */
+}
+
+/* .main-news, .news-update {
+    height: 400px;
+} */
+
+.news-item {
+    /* height: 220px; */
+    /* border-right: 1px solid #20B2AA; */
+}
+
+.main-news .thumbnail, .news-item .thumbnail {
     border: 0;
+}
+
+.news h2.text-center {
+    margin-bottom: 25px;
+}
+
+.aboutus {
+    height: 180px;
+    background-color:#20B2AA;
 }

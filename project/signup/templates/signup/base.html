@@ -11,6 +11,7 @@
     <link rel="stylesheet" type="text/css" href="{% static 'signup/slick/slick-theme.css' %}"/>
     <link rel="stylesheet" type="text/css" href="{% static 'signup/custom/app.css' %}">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Joti+One">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Dancing+Script|Macondo|Work+Sans">
   </head>
   <body>
     <nav class="navbar navbar-default">
@@ -26,9 +27,9 @@
             <div class="collapse navbar-collapse" id="myNavbar">
                 <ul class="nav navbar-nav">
                     <li class="active"><a href="/">Home</a></li>
-                    <li><a href="{% url 'signup:catalog' %}">Catalog</a></li>
-                    <li><a href="{% url 'signup:news' %}">News</a></li>
-                    <li><a href="{% url 'signup:aboutus' %}">About Us</a></li>
+                    <li><a href="#catalog">Catalog</a></li>
+                    <li><a href="#news">News</a></li>
+                    <li><a href="#aboutus">About Us</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     {% if user.is_authenticated %}
@@ -49,7 +50,7 @@
             </div>
         </div>
     </nav>
-    <div class="container content">
+    <div class="container">
     {% block content %}
     <div class="row">
         <div class="col-md-2"></div>
@@ -69,7 +70,7 @@
 
     <div class="book-session"></div>
 
-    <div class="row slick-box">
+    <div class="row slick-box" id="catalog">
         {% for d in data %}
             <div class="col-xs-6 col-sm-4 col-md-3 book-box">
                 <div class="thumbnail">
@@ -86,15 +87,83 @@
             </div>
         {% endfor %}
     </div>
-    {% endblock %}
+
+    <div class="row news" id="news">
+        <div class="col-md-12">
+            <h2 class="text-center">News</h2>
+            <div class="row">
+                <div class="col-md-6 main-news">
+                    <div class="thumbnail">
+                        <!-- <img src="/media/pexels-photo.jpeg" style="height: 400px; width: 100%" alt="Book"> -->
+                        <img src="/media/pexels-photo.jpeg" alt="Book">
+                        <div class="caption">
+                          <b>Main News</b>
+                          <p>London is a city where located in England, Europe.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 news-update">
+                    <div class="row">
+                        <div class="col-xs-6 col-md-6 news-item">
+                            <div class="thumbnail">
+                                <img src="/media/pexels-photo.jpeg" alt="Book">
+                                <div class="caption">
+                                  <b>News Item</b>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-6 col-md-6 news-item">
+                            <div class="thumbnail">
+                                <img src="/media/pexels-photo.jpeg" alt="Book">
+                                <div class="caption">
+                                    <b>News Item</b>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-6 col-md-6 news-item">
+                            <div class="thumbnail">
+                                <img src="/media/pexels-photo.jpeg" alt="Book">
+                                <div class="caption">
+                                    <b>News Item</b>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-6 col-md-6 news-item">
+                            <div class="thumbnail">
+                                <img src="/media/pexels-photo.jpeg" alt="Book">
+                                <div class="caption">
+                                    <b>News Item</b>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="container-fluid footer">
-        <div class="row">
+    </div>
+
+    <div class="container-fluid">
+        <div class="row aboutus" id="aboutus">
+            <h2 class="text-center">About Us</h2>
+            <div class="container">
+                <div class="col-md-12">
+                    <p class="text-about text-center">
+                        Menteng Library is an online library for Jakarta people who wants to read the hight quality books.
+                        On this website, visitor can read books for free. Is that sounds great ?
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="row footer">
             <div class="col-md-12">
                 <h4 class="text-center">Footer</h4>
             </div>
         </div>
     </div>
+    {% endblock %}
+
+    <!-- JAVASCRIPT -->
     <script src="{% static 'signup/jquery/jquery.min.js' %}"></script>
     <script src="{% static 'signup/bootstrap-3.3.7/js/bootstrap.min.js' %}"></script>
     <script src="{% static 'signup/slick/jquery-migrate-1.2.1.min.js' %}"></script>
